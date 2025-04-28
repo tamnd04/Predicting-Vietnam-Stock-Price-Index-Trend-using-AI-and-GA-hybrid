@@ -58,8 +58,20 @@ Decode the chromosomes (bit strings) to determine which input variables are inse
 </p>
 Then these 12 columns will be the input variables for the ANN.
 
-#### Step 3
-#### Step 4
+#### Step 3: Artificial Neural Network (ANN)
+Run a three-layered feedforward ANN model to predict the next-day VN30 index of the ACB company.
+
+#### Step 4: Fitness evaluation
+Accuracy was employed to guide chromosome selection (subsets of input variables) for
+generating the next generation in GA, as well as to evaluate the prediction model’s performance.
+The fitness values in GA were defined as the accuracy values, which are calculated using the
+following formula:
+$$
+Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
+$$
+Where TP represents true positives, FP is false positives, TN is true negatives, and FN is false
+negatives.
+
 #### Step 5
 #### Step 6
 #### Step 7
