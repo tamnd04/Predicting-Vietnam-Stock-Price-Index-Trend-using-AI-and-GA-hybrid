@@ -10,15 +10,17 @@ The input data for the VN30 index must consist of daily records spanning from Ja
 
 ![image](https://github.com/user-attachments/assets/86f765d7-9d82-4940-bedb-d57c7c4a1428)
 
-
+<p align="center">
+Figure 1: Methodology workflow for the project.
+</p>
 
 ### Data preparation and Preprocessing
-This study utilized a dataset comprising daily closing values of a single company named ACB in the VN30 index recorded between January 1, 2019, and November 10, 2024, spanning 2,140 days. After calculating the 11 technical indicators (Figure 1) with 4 different periods and cleaning the dataset there are only 1409 days left. Within this timeframe, the stock index increased on 666 occasions (47.3\%) and decreased on 743 occasions (52.7\%), as detailed in Table 1.
+This study utilized a dataset comprising daily closing values of a single company named ACB in the VN30 index recorded between January 1, 2019, and November 10, 2024, spanning 2,140 days. After calculating the 11 technical indicators (Figure 2) with 4 different periods and cleaning the dataset there are only 1409 days left. Within this timeframe, the stock index increased on 666 occasions (47.3\%) and decreased on 743 occasions (52.7\%), as detailed in Table 1.
 
 ![image](https://github.com/user-attachments/assets/e0544010-2ed9-4a06-ad0c-a3bf4fa901f9)
 
 <p align="center">
-Figure 1. Technical indicators used in this study and their equations.
+Figure 2. Technical indicators used in this study and their equations.
 </p>
 
 <div align="center">
@@ -41,6 +43,10 @@ Table 1. Yearly Up and Down distributions with percentages and totals.
 
 ### Building the hybrid model (ANN + GA)
 ![image](https://github.com/user-attachments/assets/e88779e3-ba0e-403e-bbff-5ee22494847e)
+
+<p align="center">
+Figure 3. Steps of running the ANN + GA hybrid algorithm.
+</p>
 
 #### Step 1: Population initialization
 The initial population in this study was represented as a matrix with dimensions of Population Size × Chromosome Length, consisting solely of randomly generated binary digits. Here, Population Size refers to the number of chromosomes (or individuals) in the population, while Chromosome Length (or Genome Length) denotes the number of bits (or genes) in each chromosome. To ensure enough coverage of the search space, it is generally advisable to set the population size to be at least equal to the chromosome length. In this work, the Chromosome Length was set to 44, and the Population Size was chosen as 50.
