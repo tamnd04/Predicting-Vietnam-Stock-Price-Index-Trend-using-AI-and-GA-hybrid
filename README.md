@@ -8,6 +8,7 @@ First, download the vnstock3 library using the pip command:
 
 ```python
 !pip install vnstock3
+```
 
 Next, run the `Get_dataset.py` file to get the dataset `.csv` file and then run the `Stock_prediction.py` file
 
