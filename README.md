@@ -20,7 +20,6 @@ This study utilized a dataset comprising daily closing values of a single compan
 <p align="center">
 Figure 1. Technical indicators used in this study and their equations.
 </p>
-
 | Year | Up (times) | Up (%) | Down (times) | Down (%) | Total |
 |------|------------|--------|--------------|----------|-------|
 | 2019 | 90         | 41.3%  | 128          | 58.7%    | 218   |
