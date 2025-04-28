@@ -21,8 +21,8 @@ This study utilized a dataset comprising daily closing values of a single compan
 Figure 1. Technical indicators used in this study and their equations.
 </p>
 
-<p align="center">
-  
+<div align="center">
+
 | Year | Up (times) | Up (%) | Down (times) | Down (%) | Total |
 |------|------------|--------|--------------|----------|-------|
 | 2019 | 90         | 41.3%  | 128          | 58.7%    | 218   |
@@ -33,7 +33,7 @@ Figure 1. Technical indicators used in this study and their equations.
 | 2024 | 97         | 46.6%  | 111          | 53.4%    | 208   |
 | **Total** | **666**    | **47.3%**  | **743**      | **52.7%**  | **1409** |
 
-</p>
+</div>
 
 <p align="center">
 Table 1. Yearly Up and Down distributions with percentages and totals.
