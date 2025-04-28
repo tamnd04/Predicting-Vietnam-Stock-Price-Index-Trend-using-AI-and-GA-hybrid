@@ -7,9 +7,9 @@ In this project, we will go through data input modifications for the model to be
 The input data for the VN30 index must consist of daily records spanning from January 1, 2019, to November 10, 2024 (which is 2140 days). Eleven technical indicators are calculated, each represented by four input variables corresponding to different historical time spans—3-day, 5-day, 10-day, and 15-day periods leading up to the prediction date. These inputs are designed to create diverse subsets of data, which are subsequently refined by a Genetic Algorithm (GA) to select the most effective features. The optimized input set is then fed into an Artificial Neural Network (ANN) to forecast the VN30 index trend.
 
 ## Methodology
-<p align="center">
+
 ![image](https://github.com/user-attachments/assets/86f765d7-9d82-4940-bedb-d57c7c4a1428)
-</p>
+
 
 
 ### Data preparation and Preprocessing
