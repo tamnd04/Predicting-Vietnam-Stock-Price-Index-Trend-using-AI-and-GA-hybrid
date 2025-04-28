@@ -66,9 +66,9 @@ Accuracy was employed to guide chromosome selection (subsets of input variables)
 generating the next generation in GA, as well as to evaluate the prediction model’s performance.
 The fitness values in GA were defined as the accuracy values, which are calculated using the
 following formula:
-$$
-Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
-$$
+
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
 Where TP represents true positives, FP is false positives, TN is true negatives, and FN is false
 negatives.
 
