@@ -15,6 +15,37 @@ The input data for the VN30 index must consist of daily records spanning from Ja
 ### Data preparation and Preprocessing
 This study utilized a dataset comprising daily closing values of a single company named ACB in the VN30 index recorded between January 1, 2019, and November 10, 2024, spanning 2,140 days. After calculating the 11 technical indicators (Figure 1) with 4 different periods and cleaning the dataset there are only 1409 days left. Within this timeframe, the stock index increased on 666 occasions (47.3\%) and decreased on 743 occasions (52.7\%), as detailed in Table 1.
 
-<p align="center">
 ![image](https://github.com/user-attachments/assets/e0544010-2ed9-4a06-ad0c-a3bf4fa901f9)
+
+<p align="center">
+Figure 1. Technical indicators used in this study and their equations.
 </p>
+
+![image](https://github.com/user-attachments/assets/8b9b3333-385f-4523-86e4-2d04334792c8)
+<p align="center">
+Table 1. Yearly Up and Down distributions with percentages and totals.
+</p>
+
+### Building the hybrid model (ANN + GA)
+![image](https://github.com/user-attachments/assets/e88779e3-ba0e-403e-bbff-5ee22494847e)
+
+#### Step 1: Population initialization
+The initial population in this study was represented as a matrix with dimensions of Population Size × Chromosome Length, consisting solely of randomly generated binary digits. Here, Population Size refers to the number of chromosomes (or individuals) in the population, while Chromosome Length (or Genome Length) denotes the number of bits (or genes) in each chromosome. To ensure enough coverage of the search space, it is generally advisable to set the population size to be at least equal to the chromosome length. In this work, the Chromosome Length was set to 44, and the Population Size was chosen as 50.
+
+#### Step 2: Decode (Feature selection)
+Decode the chromosomes (bit strings) to determine which input variables are inserted into the ANN. For example, if the selected features are:
+<p align="center">
+[2  3  5  6  8 10 11 14 15 16 18 19 21 22 23 24 27 36 37 38 39 40] 
+</p>
+Then these 12 columns will be the input variables for the ANN.
+
+#### Step 3
+#### Step 4
+#### Step 5
+#### Step 6
+#### Step 7
+#### Step 8
+#### Step 9
+#### Step 10
+
+
