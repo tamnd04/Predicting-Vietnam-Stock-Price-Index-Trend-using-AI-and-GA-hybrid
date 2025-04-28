@@ -21,7 +21,15 @@ This study utilized a dataset comprising daily closing values of a single compan
 Figure 1. Technical indicators used in this study and their equations.
 </p>
 
-![image](https://github.com/user-attachments/assets/8b9b3333-385f-4523-86e4-2d04334792c8)
+| Year | Up (times) | Up (%) | Down (times) | Down (%) | Total |
+|------|------------|--------|--------------|----------|-------|
+| 2019 | 90         | 41.3%  | 128          | 58.7%    | 218   |
+| 2020 | 120        | 49.4%  | 123          | 50.6%    | 243   |
+| 2021 | 126        | 50.4%  | 124          | 49.6%    | 250   |
+| 2022 | 119        | 48.0%  | 129          | 52.0%    | 248   |
+| 2023 | 114        | 47.1%  | 128          | 52.9%    | 242   |
+| 2024 | 97         | 46.6%  | 111          | 53.4%    | 208   |
+| **Total** | **666**    | **47.3%**  | **743**      | **52.7%**  | **1409** |
 <p align="center">
 Table 1. Yearly Up and Down distributions with percentages and totals.
 </p>
