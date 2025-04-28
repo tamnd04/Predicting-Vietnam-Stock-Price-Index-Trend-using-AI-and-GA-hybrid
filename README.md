@@ -62,21 +62,87 @@ Then these 12 columns will be the input variables for the ANN.
 Run a three-layered feedforward ANN model to predict the next-day VN30 index of the ACB company.
 
 #### Step 4: Fitness evaluation
-Accuracy was employed to guide chromosome selection (subsets of input variables) for
-generating the next generation in GA, as well as to evaluate the prediction model’s performance.
-The fitness values in GA were defined as the accuracy values, which are calculated using the
-following formula:
+Accuracy was employed to guide chromosome selection (subsets of input variables) for generating the next generation in GA, as well as to evaluate the prediction model’s performance. The fitness values in GA were defined as the accuracy values, which are calculated using the following formula:
 
+<p align="center">
 Accuracy = (TP + TN) / (TP + TN + FP + FN)
+</p>
 
-Where TP represents true positives, FP is false positives, TN is true negatives, and FN is false
-negatives.
+Where TP represents true positives, FP is false positives, TN is true negatives, and FN is false negatives.
 
-#### Step 5
-#### Step 6
-#### Step 7
-#### Step 8
-#### Step 9
-#### Step 10
+#### Step 5: Stopping criterion
+The stopping criterion was based on whether the accuracy of the best individual of the current generation was higher than the accuracy of the previous generation. If this continues for 20 consecutive generations (the stall value is 20), endsthe program.
+
+#### Step 6: Selection mechanism
+Tournament Selection Process
+
+The selection mechanism in GA ensures that the population of solution candidates consistently improves in terms of overall fitness values. This mechanism allows GA to eliminate suboptimal solutions while retaining the best individuals. Among the various selection techniques available, Tournament Selection with a size of 3 was adopted in this study for its simplicity, speed, and efficiency. Tournament selection applies higher selection pressure to GA, accelerating convergence and ensuring that the worst solutions do not progress to the next generation. 
 
 
+#### Step 7: Crossover function
+Single-point crossover
+
+The crossover operator in the GA combines two parent individuals (chromosomes) to create offspring for the next generation. To perform the crossover operation, two parent chromosomes are selected through the tournament selection process. We implemented the
+single-point method for the crossover section. This method helps to explore new regions of the search space by exchanging parts of the chromosomes between the parents. The crossover function works by selecting a random crossover point along the chromosome and swapping the genetic material (bits) after this point between the two parents, resulting in two offspring.
+
+#### Step 8: Mutation function
+Mutation in a genetic algorithm (GA) refers to a genetic perturbation that alters individuals in the population. It plays a crucial role in maintaining genetic diversity and exploring a broader solution space. In this work, we applied uniform mutation as our mutation strategy. The uniform mutation operator randomly selects genes (bits) in a chromosome and flips their values, which introduces variability and prevents the algorithm from getting stuck in local optima by exploring different areas of the solution space.
+
+#### Step 9: Replacement (New population)
+The genetic algorithm continues evolving until the new population is fully populated. The new population is formed by adding individuals from Elite kids (There are 2 elite children), Crossover kids, and Mutation kids:
+
+<p align="center">
+New Population = Elite Kids + Crossover Kids + Mutation Kids (2.2)
+</p>
+
+Once the new population is formed, it is evaluated, and the selection and reproduction processes are repeated until the stopping condition is satisfied.
+
+#### Step 10: Repeat until occurring the stopping conditions
+There are two stopping conditions applicable to this work that are: stopping by hitting the maximum number of generations or when reaching the stall value. The stall value (as mentioned in step 5) and the generation number are 20 and 50 respectively.
+
+## Results
+<div align="center">
+  
+| Pop_size | ANN     | GA + ANN | Best individual                                                                 |
+|----------|---------|----------|---------------------------------------------------------------------------------|
+| 40       | 52.07%  | 67.21%   | [ 2  3  5  6  8 10 11 14 15 16 18 19 21 22 23 24 27 36 37 38 39 40]           |
+| 50       | 52.07%  | 68.16%   | [ 0  3  4  5  6  8 11 12 18 20 21 23 24 28 29 34 35 37 38 39 41 42 43]       |
+| 60       | 52.07%  | 68.73%   | [ 1  4  8  9 10 11 16 18 19 20 21 22 25 34 37 40 43]                         |
+
+</div>
+
+<p align="center">
+Table 2. Results for different Pop size values.
+</p>
+
+<div align="center">
+
+| Epoch | ANN     | GA + ANN | Best individual                                                                 |
+|-------|---------|----------|---------------------------------------------------------------------------------|
+| 500   | 52.07%  | 67.21%   | [ 0  1  3  4  5  8  9 11 12 13 14 16 18 19 20 21 22 24 28 29 32 33 34 36 37 38 39 40 42] |
+| 1000  | 53.88%  | 68.55%   | [ 0  1  2  3  4  5  8  9 11 12 14 18 19 21 23 25 26 27 30 35 37 41 42 43]       |
+| 2000  | 51.34%  | 67.14%   | [ 0  1  2  3  4  5  8  9 11 12 14 19 21 23 25 26 27 30 35 37 40 42 43]       |
+
+</div>
+
+<p align="center">
+Table 3. Results for different Epoch values.
+</p>
+
+<div align="center">
+
+| Mutation Rate | ANN     | GA + ANN | Best individual                                                                 |
+|---------------|---------|----------|---------------------------------------------------------------------------------|
+| 0.1           | 52.07%  | 67.21%   | [ 0  1  2  3  4  5  6  8  9 10 11 12 14 18 20 23 25 26 28 33 34 35 36 37 38 42] |
+| 0.2           | 52.07%  | 67.21%   | [ 0  1  2  3  4  5  6  8  9 10 11 12 14 18 20 23 25 26 28 33 34 35 36 37 38 42] |
+| 0.3           | 52.07%  | 69.53%   | [ 0  1  3  5  9 11 16 17 19 20 21 22 23 25 27 29 30 34 35 37 42 43]             |
+| 0.4           | 52.07%  | 68.46%   | [ 0  2  7  8  9 10 11 14 15 19 21 22 25 29 32 34 39 40 41]                     |
+
+</div>
+
+<p align="center">
+Table 4. Results for different Mutation Rate values.
+</p>
+
+# Conclusion
+In our project, we developed a hybrid model combining **Artificial Neural Networks (ANN) and Genetic Algorithms (GA)** to predict stock index movements, testing it on a large dataset of historical stock trading data. The goal was to achieve better prediction accuracy compared to a standalone ANN model. The test results demonstrated that the hybrid model successfully met this objective, with an average improvement of 15.14\%, resulting in a prediction accuracy of 67.94\%. However, the accuracy remains relatively modest, and we are exploring the integration of ANN with other machine learning models to further enhance prediction performance.
